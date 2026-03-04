@@ -12,6 +12,7 @@ import java.util.List;
 @RequestMapping("/api/produtos")
 @CrossOrigin(origins = "http://localhost:4200")
 public class ProdutoController {
+
     @Autowired
     private ProdutoService service;
 
@@ -21,6 +22,8 @@ public class ProdutoController {
     @PostMapping
     public Produto criar(@RequestBody Produto produto) { return service.salvar(produto); }
 
+
     @DeleteMapping("/{id}")
-    public void excluir(@PathVariable Long id) { service.deletar(id); }
-}
+    public void excluir(@PathVariable Long id) {
+          service.deletar(id);}}
+
